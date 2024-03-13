@@ -1,26 +1,22 @@
 pipeline {
-    agent {
-        label 'jenkins-slave'
-    }
-     
-    options {
-        buildDiscarder(logRotator(numToKeepStr:'5'))
-    }
+    agent {label 'terraform'}
+
     stages {
-        stage('gitclone') {
+        stage('git') {
             steps {
-                git branch: 'main',
-                url: 'https://github.com/nagykaroly94/Jenkins-Homework.git'              
+                sh 'sudo yum install git -y'
+                git branch: 'main', credentialsId: '7b154a8c-a333-41d5-8f00-d0e983f8bcb0', url: 'https://github.com/nagykaroly94/Jenkins-Homework'
             }
         }
-        stage('apache'){
-            steps{
-                sh './Jenkins-Homework/apache_date.sh'
+        stage('apache') {
+            steps {
+                sh 'chmod +x ./apache_date.sh'
+                sh './apache_date.sh'
             }
         }
-        stage('artifact'){
-            steps{ 
-                archiveArtifacts artifacts: 'apache_install_date.txt'
+        stage('artifact') {
+            steps {
+                archiveArtifacts artifacts: 'apache_install_date.txt', followSymlinks: false
             }
         }
     }
