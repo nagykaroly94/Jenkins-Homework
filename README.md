@@ -11,6 +11,14 @@ Ezt az ellenőrzés előtt egy rendszergazdai jogokkal rendelkező felhasználó
 sudo echo "jenkins  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/jenkins
 ```
 
+### Git telepítése
+
+A lent látható parancs kiadásával szükséges telepíteni a git-et. Ameddig nincs telepítve a pipeline nem lesz képes lefutni, mert már a git klónozásánál meg fog akadni a folyamat.
+
+```
+sudo yum install git -y
+```
+
 ### Címkézés
 
 A jenkins-slave node címkéjnek mindenképp a "terraform" értéket kell megadni.
@@ -63,3 +71,11 @@ Az előbbiek után elindul annak a vizsgálata, hogy a pkg_manager milyen érté
 ```
 
 Az egész végén a feladatnak megfelelően létrehoz a script egy apache_install_date.txt file-t ami a futásnak a percre pontos időpontját tartalmazza.
+
+```
+date +%Y_%m_%d_%H_%M > apache_install_date.txt
+```
+
+## A repository célja
+
+A repository célja az, hogy egy Jenkins pipeline-t lehessen futtatni önálló projektként, ami automatizálja egy apache webszerver telepítését disztribúciótol függően és mellé logolja, hogy mikor történt meg a telepítés. 
