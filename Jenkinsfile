@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('git') {
             steps {
-                sh 'sudo yum install git -y'
                 git branch: 'main',
                 url: 'https://github.com/nagykaroly94/Jenkins-Homework'
             }
