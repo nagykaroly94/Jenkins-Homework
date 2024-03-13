@@ -78,4 +78,4 @@ date +%Y_%m_%d_%H_%M > apache_install_date.txt
 
 ## A repository célja
 
-A repository célja az, hogy egy Jenkins pipeline-t lehessen futtatni önálló projektként, ami automatizálja egy apache webszerver telepítését disztribúciótol függően és mellé logolja, hogy mikor történt meg a telepítés. 
+A repository célja az, hogy egy Jenkins pipeline-t lehessen futtatni önálló projektként, ami automatizálja egy apache webszerver telepítését disztribúciótol függetlenül és mellé logolja, hogy mikor történt meg a telepítés. 
