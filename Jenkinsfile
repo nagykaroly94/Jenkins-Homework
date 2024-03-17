@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'terraform'}
+    agent any
 
     stages {
         stage('git') {
