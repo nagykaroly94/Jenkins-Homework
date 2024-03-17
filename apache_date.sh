@@ -27,4 +27,4 @@ fi
 
 echo "Apache webszerver telepítése sikeres volt!"
 
-date +%Y_%m_%d_%H_%M >> apache_install_date.txt
+date +%Y_%m_%d_%H_%M > apache_install_date.txt
