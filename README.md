@@ -19,10 +19,6 @@ A lent látható parancs kiadásával szükséges telepíteni a git-et. Ameddig 
 sudo yum install git -y
 ```
 
-### Címkézés
-
-A jenkins-slave node címkéjnek mindenképp a "terraform" értéket kell megadni.
-
 ## Leírás
 
 ### Jenkinsfile
