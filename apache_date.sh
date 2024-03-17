@@ -13,11 +13,11 @@ echo "Ez egy Linux disztribúció"
   fi
 
   if [ $pkg_manager = "yum" ]; then
-    sudo yum install httpd -y
-    sudo systemctl enable httpd && sudo systemctl start httpd
+    yum install httpd -y
+    systemctl enable httpd && systemctl start httpd
   elif [ $pkg_manager = "apt" ]; then  
-    sudo apt install apache2 -y
-    sudo systemctl enable apache2 && sudo systemctl start apache2
+    apt install apache2 -y
+    systemctl enable apache2 && systemctl start apache2
   fi
 else
   echo "Nem támogatott Operációs Rendszer"
